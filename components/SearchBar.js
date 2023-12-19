@@ -2,7 +2,7 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function SearchBar() {
+export default function SearchBar({ term, onTermChange, onTermSubmit }) {
   return (
     <View style={styles.backgroundStyle}>
       <AntDesign
@@ -16,6 +16,9 @@ export default function SearchBar() {
         style={styles.inputStyle}
         autoCorrect={false}
         autoCapitalize="none"
+        value={term}
+        onChangeText={onTermChange}
+        onEndEditing={onTermSubmit}
       />
     </View>
   );
@@ -29,6 +32,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: "center",
     borderRadius: 20,
+    marginTop: 15,
   },
   iconStyle: { marginHorizontal: 15 },
   inputStyle: { flex: 1, fontSize: 18 },

@@ -1,4 +1,12 @@
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import yelp from "../api/yelp";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
@@ -49,7 +57,7 @@ export default function ResultsShowScreen({ route }) {
 
 const styles = StyleSheet.create({
   image: {
-    height: 200,
+    height: 150,
     margin: 10,
     borderRadius: 20,
   },
